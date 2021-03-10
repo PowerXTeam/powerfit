@@ -1,5 +1,6 @@
 import s from './Header.module.scss'
 import header_logo from '../../assets/images/header_logo.svg'
+import nav_icon from '../../assets/images/nav_icon.svg';
 
 const Header = () => {
     return (
@@ -11,7 +12,7 @@ const Header = () => {
             <div className={s.buttonGroup}>
                 <button className={s.buttonGroup__signInButton}>Войти</button>
                 <button className={s.buttonGroup__signUpButton}>Регистрация</button>
-                <button className={s.buttonGroup__menuButton}></button>
+                <img className={s.buttonGroup__menuIcon} src={nav_icon} alt="Menu icon"/>
             </div>
         </div>
         )
