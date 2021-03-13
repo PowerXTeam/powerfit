@@ -1,6 +1,6 @@
 $header-button-font-size: 20px;
 $header-button-line-height: 26px;
-$sign-in-icon: url('../../assets/images/header_sign_in_icon.svg');
+$sign-in-icon: url("../../assets/images/header_sign_in_icon.svg");
 
 .header {
   display: flex;
@@ -25,7 +25,7 @@ $sign-in-icon: url('../../assets/images/header_sign_in_icon.svg');
     &__signInButton {
       font-size: $header-button-font-size;
       line-height: $header-button-line-height;
-      color: #27AE60;
+      color: #27ae60;
       background: #fff;
       padding: 0 10px;
 
@@ -39,7 +39,7 @@ $sign-in-icon: url('../../assets/images/header_sign_in_icon.svg');
     &__signUpButton {
       font-size: $header-button-font-size;
       line-height: $header-button-line-height;
-      background: #27AE60;
+      background: #27ae60;
       border-radius: 8px;
       padding: 10px;
       color: #fff;
