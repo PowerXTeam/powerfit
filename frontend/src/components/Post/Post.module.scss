@@ -1,5 +1,11 @@
+@import './ptsans/ptsans.scss';
+
 .post {
+    margin: 0px auto 0px auto;
     max-width: 590px;
+    font-size: 16px;
+
+    & + & {margin-top: 18px;}
 
     &__head {
         display: flex;
@@ -9,8 +15,13 @@
     }
 
     &__title {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 28px;
+    }
+
+    &__title,
+    &__content {
+        font-family: 'PT Sans';
     }
 
     &__public-date {
@@ -50,7 +61,6 @@
     }
 
     &__autor-name {
-        font-size: 16px;
         margin: 0px 8px 0px 0px;
     }
 
@@ -77,6 +87,7 @@
     }
 
     &__tags {
+        font-size: inherit;
 
         & + & {
             margin-left: 16px;
@@ -84,6 +95,6 @@
     }
     
     &__content {
-
+        line-height: 26px;
     }
 }

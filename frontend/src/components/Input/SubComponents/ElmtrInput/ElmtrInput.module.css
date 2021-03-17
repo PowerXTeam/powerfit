@@ -1,0 +1,42 @@
+.input {
+    display: inline-block;
+    width: 100%;
+    min-width: 236px;
+    border: 1px solid #E0E0E0;
+    position: relative;
+}
+
+.input,
+.input > input {
+    border-radius: 8px;
+}
+
+.input > input {
+    width: 100%;
+    padding: 13px 8px;
+    font-size: 14px;
+}
+
+.input > input[type="password"] {
+    background: url('./bx_bx-lock-open-alt.png') calc(100% - 8px) center no-repeat;
+    background-size: 16px 16px;
+}
+
+.input--position-right > input {
+    background-position: 8px center;
+}
+
+.input[data-isvalid="false"] {
+    border-color: #F8DDDD;
+    color: #E9E9E9;
+}
+
+.input[data-isvalid="false"]:after {
+    content: 'Small error exception';
+    color: #EB5757;
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0px;
+}

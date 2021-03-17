@@ -1,21 +1,30 @@
 import s from './Header.module.scss'
 import header_logo from '../../assets/images/header_logo.svg'
+import Button from '../Button/Button';
 import nav_icon from '../../assets/images/nav_icon.svg';
 
 const Header = () => {
     return (
-        <div className={s.header}>
-            <div className={s.titleBlock}>
-                <img src={header_logo} alt="Header logo" className={s.titleBlock__logo}/>
-                <h1 className={s.titleBlock__title}>Power X</h1>
+        <header className={s["header"]}>
+            <div className="container">
+                <div className={s["header__logo"]}>
+                    <div className={s["header__icon"]}><img src={header_logo} alt="logotype" /></div>
+                    <h1 className={s["header__name"]}>PowerX</h1>
+                </div>
+
+                <nav className={s["header__nav"]}>
+                    <button className={s["header__sign-in"]}>
+                        Войти
+                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 1.5C6.93225 1.5 5.25 3.18225 5.25 5.25V7.5H4.5C3.67275 7.5 3 8.17275 3 9V15C3 15.8273 3.67275 16.5 4.5 16.5H13.5C14.3273 16.5 15 15.8273 15 15V9C15 8.17275 14.3273 7.5 13.5 7.5H12.75V5.25C12.75 3.18225 11.0677 1.5 9 1.5ZM13.5 9L13.5015 15H4.5V9H13.5ZM6.75 7.5V5.25C6.75 4.0095 7.7595 3 9 3C10.2405 3 11.25 4.0095 11.25 5.25V7.5H6.75Z"/>
+                        </svg>
+                    </button>
+                    <Button type="button-succes" content="Регистрация" />
+                    <button className={`${s["header__menu"]} ${s["menu"]}`}><img src={nav_icon} alt="menu" /></button>
+                </nav>
             </div>
-            <div className={s.buttonGroup}>
-                <button className={s.buttonGroup__signInButton}>Войти</button>
-                <button className={s.buttonGroup__signUpButton}>Регистрация</button>
-                <img className={s.buttonGroup__menuIcon} src={nav_icon} alt="Menu icon"/>
-            </div>
-        </div>
-        )
+        </header>
+    );
 }
 
 export default Header;

@@ -1,0 +1,41 @@
+.label {
+    display: flex;
+    align-items: center;
+    margin: 24px 0px 0px 0px;
+    cursor: pointer;
+
+    &__icon {
+        margin: 0px 8px 0px 0px;
+        width: 24px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    a {
+        font-weight: 500;
+        font-size: 18px;
+        color: #000;
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .label__count-new {
+            margin: 0px 0px 0px auto;
+            padding: 0px 20px;
+            font-size: 16px;
+            height: 26px;
+            line-height: 30px;
+            color: #fff;
+            background-color: #2D9CDB;
+            border-radius: 36px;
+        }
+
+        .label__count-now--dissabled {
+            display: none;
+        }
+    }
+}

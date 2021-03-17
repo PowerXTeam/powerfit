@@ -1,52 +1,82 @@
-$header-button-font-size: 20px;
-$header-button-line-height: 26px;
-$sign-in-icon: url("../../assets/images/header_sign_in_icon.svg");
-
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  padding: 50px 0px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #fff;
 
-  .titleBlock {
+  > div {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
 
-    &__title {
-      font-size: 36px;
-      padding: 0 0 0 15px;
-      font-weight: 700;
+  &__logo {
+    display: flex;
+    align-items: center;
+    cursor: default;
+  }
+
+  &__icon {
+    height: 72px;
+
+    img {
+      height: 100%;
+      width: auto;
     }
   }
 
-  .buttonGroup {
-    font-size: $header-button-font-size;
-    line-height: $header-button-line-height;
+  &__name {
+    margin: 0px 0px 0px 8px;
+    font-size: 36px;
+    color: #141414;
+  }
 
-    &__signInButton {
-      font-size: $header-button-font-size;
-      line-height: $header-button-line-height;
-      color: #27ae60;
-      background: #fff;
-      padding: 0 10px;
-
-      &:after {
-        content: "";
-        background: $sign-in-icon no-repeat center;
-        padding: 0 10px;
-      }
+  &__nav {
+    button + button {
+      margin: 0px 0px 0px 16px;
+      display: inline-block;
+      vertical-align: middle;
     }
+  }
 
-    &__signUpButton {
-      font-size: $header-button-font-size;
-      line-height: $header-button-line-height;
-      background: #27ae60;
-      border-radius: 8px;
-      padding: 10px;
-      color: #fff;
-    }
+  &__menu,
+  &__sign-in {
+    background-color: transparent;
+  }
 
-    &__menuIcon {
-      padding: 0 10px;
+  &__sign-in {
+    font-size: 16px;
+    color: #27ae60;
+    vertical-align: middle;
+    transition: 0.1s;
+
+    svg {
+      transition: 0.1s;
+      margin: 0px 0px 0px 8px;
+      display: inline-block;
+      vertical-align: middle;
+      height: 18px;
+      width: 18px;
+      fill: #27ae60;
     }
+  }
+
+  &__menu {
+    height: 24px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.header__sign-in:hover {
+  color: #1f9752;
+
+  svg {
+    fill: #1f9752;
   }
 }
