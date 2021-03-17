@@ -1,9 +1,11 @@
 @import './ptsans/ptsans.scss';
 
 .post {
-    margin: 50px auto 0px auto;
+    margin: 0px auto 0px auto;
     max-width: 590px;
     font-size: 16px;
+
+    & + & {margin-top: 18px;}
 
     &__head {
         display: flex;
