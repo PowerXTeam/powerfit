@@ -11,13 +11,39 @@ type PostProps = {
     profile: { name: string, icon: any },
     interaction?: { countLike?: number, countComm?: number },
     content: string,
-    tags: Array<string>,
+    tags?: Array<string>,
 };
 
-const Post: FC<PostProps> = ({ articleInfo, profile, interaction, content, tags = [] }) => {
-    const listTags = tags.map((tagsName) => {
-        return (<button className={s["post__tags"]}>{tagsName}</button>);
-    });
+const Post: FC<PostProps> = ({ articleInfo, profile, interaction, content, tags }) => {
+    let tagsHTML: any = '';
+
+    if (tags) {
+        tagsHTML = tags.map((tagsName) => {
+            return <button className={s["post__tags"]} key={tagsName}>{tagsName}</button>
+        });
+    }
+
+    const getDOMelement = (selector: string) =>
+        Array.from(document.querySelectorAll(selector));
+
+    const getPartContent = (content: string, maxWord: number = 33): string => content.split(' ').slice(0, maxWord).join(' ');
+
+    const btnEvent = (btn: any) => {
+        const postContent = btn.parentNode.childNodes[0]; /* span */
+
+        postContent.classList.toggle(s['post__content--show']);
+
+        if (postContent.classList.contains(s['post__content--show'])) {
+            btn.innerText = 'Читать дальше';
+            postContent.innerText = getPartContent(postContent.innerText);
+        } else {
+            btn.innerText = 'Скрыть';
+            postContent.innerHTML = postContent.getAttribute('data-content');
+        }
+    };
+
+    getDOMelement(`.${s['post__learn-more']}`)
+        .forEach((btn: any) => btn.onclick = () => btnEvent(btn));
 
     return (
         <article className={s["post"]}>
@@ -35,16 +61,17 @@ const Post: FC<PostProps> = ({ articleInfo, profile, interaction, content, tags 
 
                 <div className={s["post__autor"]}>
                     <p className={s["post__autor-name"]}>{profile.name}</p>
-                    <div className={s["post__autor-icon"]}><img src={profile.icon} alt={profile.name}/></div>
+                    <div className={s["post__autor-icon"]}><img src={profile.icon} alt={profile.name} /></div>
                 </div>
             </div>
 
             <div className={s["post__content"]}>
-                <p>{content}</p>
+                <span data-content={content}>{getPartContent(content)}</span>
+                <button className={s["post__learn-more"]}>Читать дальше</button>
             </div>
 
             <div className={s["post__tags-list"]}>
-                {listTags}
+                {tagsHTML}
             </div>
         </article>
     );

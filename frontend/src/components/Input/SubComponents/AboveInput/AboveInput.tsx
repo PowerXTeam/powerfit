@@ -1,6 +1,12 @@
-import s from './AboveInput.module.css';
+import { FC } from 'react';
+import s from './AboveInput.module.scss';
 
-const AboveInput = ({ label, options }) => {
+type aboveInputProps = {
+    label?: string,
+    options?: string
+}
+
+const AboveInput: FC<aboveInputProps> = ({ label = '', options = '' }) => {
     if (label) {
         if (options) {
             return (
@@ -34,7 +40,7 @@ const AboveInput = ({ label, options }) => {
             ); 
         } else {
             return (
-                ''
+                <div></div>
             );
         }
     }

@@ -6,18 +6,18 @@
 .input-label {
     margin: 0px auto 0px 0px;
     padding: 0px 4px 0px 0px;
+
+    > span {
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 
 .input-options {
     margin: 0px 0px 0px auto;
     padding: 0px 0px 0px 4px;
-}
 
-.input-label > span {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.input-options > span {
-    color: #828282;
+    > span {
+        color: #828282;
+    }
 }

@@ -15,7 +15,7 @@ const Label: FC<labelProps> = ({ icon, value, href = '#', notif }) => {
         return (
             <li className={s["label"]}>
                 <span className={s["label__icon"]}>
-                    <img src={icon}/>
+                    <img src={icon} alt={value}/>
                 </span>
                 <a href={href}>{value}<span className={`${s[menuNotifClass]} ${s["label__count-new"]}`}>{notif}</span></a>
             </li>
@@ -24,7 +24,7 @@ const Label: FC<labelProps> = ({ icon, value, href = '#', notif }) => {
         return (
             <li className={s["label"]}>
                 <span className={s["label__icon"]}>
-                    <img src={icon} alt=""/>
+                    <img src={icon} alt={value}/>
                 </span>
                 <a href={href}>{value}</a>
             </li>

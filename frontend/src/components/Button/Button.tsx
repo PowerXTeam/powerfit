@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import s from './Button.module.css';
+import s from './Button.module.scss';
 
 const Button: FC<{type: string, isDisabled?: boolean, icon?: any, content: string}> = ({type, isDisabled, icon, content}) => {
     let classes = `
@@ -10,7 +10,7 @@ const Button: FC<{type: string, isDisabled?: boolean, icon?: any, content: strin
     if (icon) {
         return (
             <button className={s["button-w-icon"] + ' ' + classes}>
-                <span className={s["button-w-icon__icon"]}><img src={icon} /></span>
+                <span className={s["button-w-icon__icon"]}><img src={icon} alt={content.split(' ')[0]}/></span>
                 <span>{content}</span>
             </button>
         )

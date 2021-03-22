@@ -97,4 +97,15 @@
     &__content {
         line-height: 26px;
     }
+
+    &__content--show {
+        display: inline;
+    }
+
+    &__learn-more {
+        background-color: transparent;
+        color: #2F80ED;
+        font-size: 16px;
+        margin: 0px 0px 0px 5px;
+    }
 }

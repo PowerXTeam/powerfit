@@ -89,6 +89,7 @@
 }
 
 .menu--active {
+    display: block;
     
     .menu {
         transform: translateX(0);
@@ -96,6 +97,7 @@
 }
 
 .menu--disable {
+    display: none;
     
     .menu {
         transform: translateX(100%);
